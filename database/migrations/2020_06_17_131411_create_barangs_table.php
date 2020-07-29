@@ -1,0 +1,38 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateBarangsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('barangs', function (Blueprint $table) {
+            $table->id();
+            $table->string('kode')->nullable();
+            $table->string('nama');
+            $table->string('merk');
+            $table->string('tipe');
+            $table->string('satuan');
+            $table->string('foto')->nullable();
+            $table->text('spesifikasi');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('barangs');
+    }
+}
